@@ -1,0 +1,22 @@
+@use "../styles/variables" as *;
+.grid{
+    background-color: $gid-background-dark;
+    min-height: 50vh;
+    border-radius:2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: space-between;
+    & > * {
+        width: 100%;
+        max-width: 25rem;
+    }
+}
+@media screen and (width <= 768px) {
+    .grid{
+       justify-content: center;
+       background-color: $gid-background-light;
+       padding: 0;
+    }
+}

@@ -1,0 +1,23 @@
+@use "../styles/variables.scss" as *;
+.banner{
+    position: relative;
+   /* width: 100%;*/
+    padding-inline: 2rem;
+    background-image: url("https://unsplash.it/1920/1080");
+    background-size: cover;
+    background-position: center;
+    min-height: 140px;
+    border-radius: 2rem;
+    display: grid;
+    place-items: center;
+    color: $color-tertiary;
+    margin-bottom: 2rem;
+    &::before {
+        position: absolute;
+        content:"";
+        inset: 0;
+        opacity:0.6;
+        border-radius: 2rem;
+    }
+   
+}
