@@ -1,32 +1,36 @@
 import React from "react";
 import "../styles/ApartmentHeader.scss";
 
-export function ApartmentHeader() {
+export function ApartmentHeader(props) {
+  const flat = props.flat;
+  const name = flat.host.name;
+  const [firstName, lastName] = name.split(" ");
+
     return(
         <div className="apartement__header">
         <div className="Apartement__title">
-           <h1>Crazy loft on Canal Saint Martin</h1>
-           <h2 >Paris, ile de France</h2>
+           <h1>{flat.title}</h1>
+           <h2>{flat.location}</h2>
           <div className="apartment__tags">
-             <span>Cozy</span>
-             <span>Canal</span>
-             <span>Paris 10</span>
+            {flat.tags.map((tag) => ( 
+            <span> key={tag}{tag}</span>
+          ))}
           </div>
         </div>
         <div className="apartement__owner">
           <div className="apartement__owner__details">
             <h3>
-              <span>Alexandre</span>
-              <span>Dumas</span>
+              <span>{firstName}</span>
+              <span>{lastName}</span>
             </h3>
-            <div className="Apartment__owner__badge"></div>
+            <div className="Apartment__owner__badge">
+              <img src={flat.host.picture} alt="" />
+            </div>
           </div>
             <div className="Apartment__owner__stars">
-            <span className="on">★</span>
-            <span className="on">★</span>
-            <span className="on">★</span>
-            <span className="off">★</span>
-            <span className="off">★</span>
+              {[1, 2, 3, 4, 5].map((num) => (
+                <span key={num}className={props.flat.rating >= num ? "on" : ""}>★</span>
+              ))}
             </div>
           </div>
         </div>

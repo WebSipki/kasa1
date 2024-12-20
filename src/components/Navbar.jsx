@@ -11,7 +11,7 @@ function Navbar() {
           <img src={logo} alt="Logo" />
         </div>
       </NavLink>
-      <NavLink to="/flat">
+      <NavLink to="/">
         <div>Accueil</div>
       </NavLink>
       <NavLink to="/about">

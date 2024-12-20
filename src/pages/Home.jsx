@@ -3,6 +3,7 @@ import "../styles/Home.scss";
 import Banner from "../layout/Banner.jsx";
 import ApartmentGrid from "../components/ApartmentGrid.jsx";
 
+
 function Home() {
   return(
     <>

@@ -25,17 +25,13 @@ function ApartmentGrid() {
   }, []);
 
   // Ajout de return ici
-  return (
-    <div className="grid">
+    return (
+     <div className="grid">
       {apartments.map((apartment) => (
-        <Apartment
-          key={apartment.id} // Ajout de clé unique
-          title={apartment.title}
-          imageUrl={apartment.cover}
-        />
+        <Apartment title={apartment.title} imageUrl={apartment.cover} key={apartment.id}/>
       ))}
     </div>
-  );
+  ); 
 }
 
 export default ApartmentGrid;
