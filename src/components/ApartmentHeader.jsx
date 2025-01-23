@@ -2,9 +2,11 @@ import React from "react";
 import "../styles/ApartmentHeader.scss";
 
 export function ApartmentHeader(props) {
-  const flat = props.flat;
-  const name = flat.host.name;
-  const [firstName, lastName] = name.split(" ");
+  const flat = props.flat || {};
+  const host = flat.host || {};
+  const name = typeof host.name === "string" ? host.name : "";
+ // const name = host?.name || {};
+  const [firstName = "", lastName = ""] = name.split(" ");
 
     return(
         <div className="apartement__header">
@@ -12,8 +14,8 @@ export function ApartmentHeader(props) {
            <h1>{flat.title}</h1>
            <h2>{flat.location}</h2>
           <div className="apartment__tags">
-            {flat.tags.map((tag) => ( 
-            <span> key={tag}{tag}</span>
+            {(flat.tags || []).map((tag) => ( 
+            <span key={tag}>{tag}</span>
           ))}
           </div>
         </div>
@@ -24,7 +26,7 @@ export function ApartmentHeader(props) {
               <span>{lastName}</span>
             </h3>
             <div className="Apartment__owner__badge">
-              <img src={flat.host.picture} alt="" />
+              <img src={host.picture} alt="" />
             </div>
           </div>
             <div className="Apartment__owner__stars">

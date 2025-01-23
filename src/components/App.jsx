@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/App.scss";
+import "../App.scss";
 import NavLink from "../Navbar.jsx";
 import Banner from "../layout/Banner.jsx";
 import Footer from "../layout/Footer.jsx";

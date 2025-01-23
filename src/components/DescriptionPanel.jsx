@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import "../styles/DescriptionPanel.scss";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export function DescriptionPanel(props) {
-  const [isContentVisible, setIsContentVisible] = useState(false);
+  const [isContentVisible, setIsContentVisible] = useState(true);
+
   const showContent = () =>{
     setIsContentVisible(!isContentVisible);
-  }
+  };
+  const contentClass = (isContentVisible ? "visible" : "hidden") + " description__content";
+  const chevronClass = (isContentVisible ? "fa-chevron-up" : "fa-chevron-down") + " fas";
   
   return(
         <div className="description__panel">
-          <p className="description__title">
+          <p className="description__title" onClick={showContent}>
              <span>{props.title}</span>
-             <i className="fas fa-chevron-up" onClick={showContent}></i>
+             <i className={chevronClass}></i>
           </p>
 
-          {isContentVisible && <p className="description__content">{props.content}</p>}
+          <div className={contentClass}>{props.content}</div>
         </div>
     );
 }
