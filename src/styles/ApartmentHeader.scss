@@ -54,9 +54,10 @@
     }
     h2{
         font-weight: 400;
-        margin-top: 0;
-        margin-bottom: 0;
+        margin-top: 5px;
+        margin-bottom: 5px;
         font-size: 20px;
+        color: $footer-background-color;
     }
     .apartment__tags {
         display: grid;
@@ -68,6 +69,7 @@
           padding: 0.3em 1em;
           border-radius: 0.7rem;
           text-align: center;
+          margin-top: 5px;
         }
     }
     h3 {

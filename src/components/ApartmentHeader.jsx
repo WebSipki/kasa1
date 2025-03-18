@@ -5,7 +5,7 @@ export function ApartmentHeader(props) {
   const flat = props.flat || {};
   const host = flat.host || {};
   const name = typeof host.name === "string" ? host.name : "";
- // const name = host?.name || {};
+
   const [firstName = "", lastName = ""] = name.split(" ");
 
     return(

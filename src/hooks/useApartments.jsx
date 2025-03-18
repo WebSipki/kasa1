@@ -9,13 +9,18 @@ useEffect(() => {
   fetch("/logements.json", {signal: abortController.signal })
   .then((res) => res.json())
   .then((res) => setApartments(res))
-  .catch(console.error);
+   .catch((error) => {
+        if (error.name !== "AbortError") {
+          console.error("Fetch error:", error);
+        } else {
+          console.log("fetch");
+        }
+      });
 
- return () => {
-  console.log("cleanup");
-  abortController.abort();
- 
- };
+      return () => {
+        console.log("Cleanup: aborting fetch");
+        abortController.abort();
+      };
 }, []);
 return apartments;
 };

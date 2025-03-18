@@ -1,23 +1,31 @@
 @use "../styles/variables.scss" as *;
 .banner{
     position: relative;
-   /* width: 100%;*/
     padding-inline: 2rem;
-    background-image: url("https://unsplash.it/1920/1080");
+    background-image: url("../assets/banner1.png");
     background-size: cover;
     background-position: center;
     min-height: 140px;
     border-radius: 2rem;
     display: grid;
     place-items: center;
-    color: $color-tertiary;
     margin-bottom: 2rem;
+   
     &::before {
         position: absolute;
         content:"";
         inset: 0;
-        opacity:0.6;
+        background-color: $footer-background-color;
+        opacity: 0.6;
         border-radius: 2rem;
+       
     }
-   
+    h2 {
+        position: relative; 
+        color: $color-tertiary; 
+        font-size: 2rem; 
+        font-weight: bold; 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    }
 }
+   

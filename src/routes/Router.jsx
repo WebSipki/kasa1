@@ -1,5 +1,8 @@
 import React from "react";
 import { createBrowserRouter, Outlet } from "react-router-dom";
+// Outlets pour afficher certaines parties de la page
+// Dans une application complexe, on peut décider d’afficher certaines 
+// parties de la page en fonction de la route que nous avons prise. //
 import Home from "../pages/Home.jsx";
 import ApartementPage from "../pages/ApartementPage.jsx";
 import About from "../pages/About.jsx";
@@ -37,7 +40,7 @@ export const Router = createBrowserRouter([
         path: "/about",
         element: <About />
       },
-      
+     
     ],
   },
 ]);

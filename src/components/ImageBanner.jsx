@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/ImageBanner.scss";
+import bannerImage from "../assets/banner2.png";
 
 
 export function ImageBanner(props) {
@@ -23,13 +24,12 @@ export function ImageBanner(props) {
       }
       setCurrentPicture(currentPicture - 1);
    };
+   
+   const areMultiplePicturesAvailable = () => pictures && pictures.length > 1;
 
-   const arePicturesAvailable = () => {
-      return pictures && pictures.length > 0;
-   };
    const getCarouselOrDefaultImage = () => {
-      if (!arePicturesAvailable()) {
-         return <img src="https://picsum.photos/800" className="show" alt="" />;
+      if (!pictures || pictures.length === 0) {
+         return <img src={bannerImage} className="show" alt="" />;
       }
       return pictures.map((pic, index) => (
       <img key={pic} src={pic} alt="" className={getClassName(index)}></img>
@@ -39,7 +39,7 @@ export function ImageBanner(props) {
     return(
       <div className="Image__banner">
          <div className="image__container">{getCarouselOrDefaultImage()}</div>
-         {arePicturesAvailable() && (
+         {areMultiplePicturesAvailable() && (
             <>
                <button className="btn btn-next" onClick={moveToNext}>
                   <i className="fas fa-chevron-left"></i>

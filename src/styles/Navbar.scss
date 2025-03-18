@@ -9,9 +9,11 @@
     @media screen and (width <= 768px) {
       text-transform: uppercase;
       font-weight: 400;
+
     }
     & >*:first-child {
         margin-right: auto;
+        width: 12rem;
     }
     & a {
       text-decoration: none;
