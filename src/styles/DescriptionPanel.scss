@@ -19,24 +19,33 @@
       i {
         font-size: 2rem;
         cursor: pointer;
-        
+   
       }
     }
     .description__content{
       background-color: $background-light;
-      color: $color-primary;
+      color: black;
       padding: 1rem;
+      font-size: 22px;
       border-radius: 0.7rem;
       position: relative;
       top: -0.3rem;
       z-index: -1;
-      
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 1s ease-in-out, max-height 1s ease-in-out;  
     }
+  
+  
+
     .visible {
-      display: block;
+      opacity: 1;
+      max-height: 250px; // Ajustez en fonction du contenu
     }
     
     .hidden {
-      display: none;
+      opacity: 0;
+      max-height: 0;
     }
 }

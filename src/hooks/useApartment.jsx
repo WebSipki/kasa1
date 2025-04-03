@@ -9,7 +9,7 @@ export function useApartment() {
     const controller = new AbortController();
     fetch("/logements.json")
       .then((res) => {
-       console.log("Réponse brute : ", res);
+      
        return res.json();
        })
       .then((flats) => {
